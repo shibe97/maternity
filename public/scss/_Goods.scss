@@ -1,0 +1,83 @@
+.Goods {
+    padding: 30px 0;
+    margin: 0 -15px;
+    text-align: center;
+
+    &__list {
+        display: inline-block;
+        background-color: #fff;
+        padding: 20px;
+        width: 200px;
+        height: 260px;
+        border-radius: 20px;
+        margin: 15px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        border: 2px solid #fff;
+        text-align: left;
+
+        &:hover {
+            border: 2px solid #eb95a0;
+        }
+    }
+
+    &__image {
+        display: block;
+        margin: 0 auto 20px;
+    }
+
+    &__name {
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    &__price {
+        color: #666;
+    }
+
+    &__priceNum {
+        font-size: 150%;
+        font-family: "Times New Roman";
+        margin-right: 5px;
+    }
+
+    &__shipping {
+        display: inline-block;
+        padding: 3px 5px;
+        background-color: #eee;
+        border-radius: 3px;
+        font-size: 75%;
+    }
+
+    &__review {
+        font-size: 75%;
+        color: #666;
+    }
+
+    &__pagenation {
+        text-align: center;
+    }
+
+    &__btn {
+        display: inline-block;
+        background-color: $color-green;
+        border-radius: 4px;
+        color: #fff;
+        padding: 10px 30px;
+        margin: 20px;
+        box-shadow: 0 3px 0 $color-dark_green;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+
+        &:hover {
+            background-color: $color-dark_green;
+            box-shadow: 0 3px 0 #23a188;
+        }
+
+        &.disabled {
+            background-color: #ccc;
+            box-shadow: 0 3px 0 #999;
+            cursor: default;
+        }
+    }
+}

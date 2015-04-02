@@ -1,0 +1,50 @@
+.Header {
+    height: 70px;
+    background-color: $color-bg;
+    text-align: center;
+
+    &__logo {
+        display: inline-block;
+        margin: 15px 30px;
+    }
+
+    &__image {
+        height: 40px;
+    }
+
+    &__loginBtn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        background-color: $color-concept;
+        color: #fff;
+        border-radius: 3px;
+        padding: 5px 20px;
+        margin: 14px 10px;
+    }
+
+    &__sns {
+        position: absolute;
+        top: 19px;
+        right: 30px;
+    }
+
+    &__twitter {
+        display: inline-block;
+        background: url("../images/icn_tw_01.png") no-repeat left top;
+        width: 32px;
+        height: 32px;
+        text-indent: -9999px;
+        overflow: hidden;
+    }
+
+    &__facebook {
+        display: inline-block;
+        background: url("../images/icn_fb_01.png") no-repeat left top;
+        width: 32px;
+        height: 32px;
+        text-indent: -9999px;
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,35 @@
+.Navi {
+    background-color: $color-green;
+    width: 240px;
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+
+    &__title {
+        background-color: $color-bg_navi_title;
+        padding: 10px;
+        font-weight: bold;
+        color: #EA8686;
+    }
+
+    &__lists {
+        &>li:last-child>a {
+            border-bottom: none;
+        }
+    }
+
+    &__list {
+        display: block;
+        color: #fff;
+        padding: 10px 20px;
+        border-bottom: 1px dashed #ccc;
+
+        &.selected {
+            background-color: $color-dark_green;
+            font-weight: bold;
+        }
+        &:hover {
+            background-color: $color-dark_green;
+        }
+    }
+}

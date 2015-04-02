@@ -1,0 +1,10 @@
+.Footer {
+    text-align: center;
+    font-size: 12px;
+    padding: 20px 0;
+    background-color: $color-bg;
+
+    &__copyright {
+        color: #999;
+    }
+}

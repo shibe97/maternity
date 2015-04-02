@@ -1,0 +1,15 @@
+.Body {
+    background-color: $color-bg;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+
+    &__left {
+        background-color: $color-bg;
+        flex-basis: 240px;
+    }
+    &__right {
+        flex: auto;
+        flex-basis: 800px;
+    }
+}
