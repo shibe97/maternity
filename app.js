@@ -8,6 +8,13 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', require('./routes/index'));
 app.get('/category/:id', require('./routes/category'));
 
+/**
+ * API
+ *
+ */
+app.get('/api/category', require('./api/category'));
+app.get('/api/ranking', require('./api/ranking'));
+
 app.listen(app.get('port'), function() {
       console.log("Node app is running at localhost:" + app.get('port'))
 });
