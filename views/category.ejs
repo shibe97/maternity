@@ -22,24 +22,40 @@
         <script>(function(d, s, id){var js, fjs = d.getElementsByTagName(s)[0];if(d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&appId=1506406802915855&version=v2.0";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
         <div class="Wrapper">
-            <header class="Header">
-                <h1 class="Header__logo"><a href="/"><img class="Header__image" src="/images/logo_title_02.png" alt="MoM maternal goods"></a></h1>
-                <div class="Header__sns">
-                    <a href="https://twitter.com/maternity_goods" class="Header__twitter">Twitter</a>
-                </div>    
-            </header>    
-            <div class="Body__left">
-                <div class="Navi">
-                    <dl>
-                        <dt class="Navi__title">カテゴリ</dt>
-                        <dd class="region-group"><div class="Loader">loading...</div></dd>
-                    </dl>
-                </div>    
-            </div>
-            <div class="Body__right"></div>
-            <footer class="Footer">
-                <p class="Footer__copyright">Copyright © 2015 MoM マタニティグッズクラブ. All Rights Reserved.</p>
-            </footer>
+            <%- partial("partials/header") %>
+            <section class="Body">
+                <div class="Body__left">
+                    <div class="Navi">
+                        <dl>
+                            <dt class="Navi__title">カテゴリ</dt>
+                            <dd>
+                                <ul class="Navi__lists">
+                                    <% categories.forEach(function(category){ %>
+                                        <li>
+                                            <a class="Navi__list <%= selectedCategory === category.id ? 'selected' : '' %>" href="/category/<%= category.id %>"><%= category.name %></a>
+                                        </li>
+                                    <% }); %>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>    
+                </div>
+                <div class="Body__right">
+                    <div class="Content">
+                        <div class="Breadcrumb">
+                            <% categories.forEach(function(category){ %>
+                                <% if(selectedCategory === category.id){ %>
+                                    <p><a href="/">トップ</a> > <%= category.name %></p>
+                                <% } %>
+                            <% }); %>
+                        </div>
+                        <div class="Ranking">
+                            <h2 class="Ranking__title">週間ランキング</h2>
+                        </div>    
+                    </div>    
+                </div>
+            </section>
+            <%- partial("partials/footer") %>
         </div>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

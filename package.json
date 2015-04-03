@@ -15,6 +15,7 @@
   "dependencies": {
     "ejs": "^2.3.1",
     "express": "^4.12.3",
+    "express-partials": "^0.3.0",
     "request": "^2.54.0",
     "underscore-node": "^0.1.2"
   }

@@ -1,5 +1,9 @@
 var express = require('express');
+var partials = require('express-partials');
+
 var app = express();
+
+app.use(partials());
 
 app.set('views', __dirname + '/views');
 app.set('port', (process.env.PORT || 5000));
