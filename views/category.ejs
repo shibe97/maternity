@@ -27,34 +27,16 @@
                 <div class="Header__sns">
                     <a href="https://twitter.com/maternity_goods" class="Header__twitter">Twitter</a>
                 </div>    
-            </header>
-            <section class="Body">
-                <div class="Body__left">
-                    <div class="Navi">
-                        <dl>
-                            <dt class="Navi__title">カテゴリ</dt>
-                            <dd class="region-group"><div class="Loader">loading...</div></dd>
-                        </dl>
-                    </div>    
-                </div>
-                <div class="Body__right">
-                    <div class="Content">
-                        <div class="Ranking">
-                            <h2 class="Ranking__title">週間ランキング</h2>
-                            <ul class="cf">
-                                <% data.forEach(function(item){ %>
-                                    <li class="Ranking__list">
-                                        <a href="<%= item.Url %>">
-                                            <img class="Ranking__image" src="<%= item.Image.Medium %>" alt="<%= item.Name %>">
-                                            <p><%= item.Name.slice(0, 16) %>...<p>
-                                        </a>
-                                    </li>
-                                <% }); %>
-                            </ul>
-                        </div>    
-                    </div>    
-                </div>
-            </section>
+            </header>    
+            <div class="Body__left">
+                <div class="Navi">
+                    <dl>
+                        <dt class="Navi__title">カテゴリ</dt>
+                        <dd class="region-group"><div class="Loader">loading...</div></dd>
+                    </dl>
+                </div>    
+            </div>
+            <div class="Body__right"></div>
             <footer class="Footer">
                 <p class="Footer__copyright">Copyright © 2015 MoM マタニティグッズクラブ. All Rights Reserved.</p>
             </footer>

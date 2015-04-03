@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,6 +14,8 @@
   },
   "dependencies": {
     "ejs": "^2.3.1",
-    "express": "^4.12.3"
+    "express": "^4.12.3",
+    "request": "^2.54.0",
+    "underscore-node": "^0.1.2"
   }
 }
