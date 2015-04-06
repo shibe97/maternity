@@ -1,5 +1,4 @@
 var request = require('request');
-var _ = require('underscore-node');
 var options = {
     url: 'http://localhost:5000/api/category',
     json: true

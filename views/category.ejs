@@ -42,15 +42,55 @@
                 </div>
                 <div class="Body__right">
                     <div class="Content">
-                        <div class="Breadcrumb">
-                            <% categories.forEach(function(category){ %>
-                                <% if(selectedCategory === category.id){ %>
+                        <% categories.forEach(function(category){ %>
+                            <% if(selectedCategory === category.id){ %>
+                                <div class="Breadcrumb">
                                     <p><a href="/">トップ</a> > <%= category.name %></p>
-                                <% } %>
-                            <% }); %>
+                                </div>
+                                <div class="Entity cf">
+                                    <h2 class="Entity__title"><%= category.name %></h2>
+                                    <p class="Entity__description"><%= category.description %></p>
+                                </div>
+                            <% } %>
+                        <% }); %>
+                        <div class="Panel cf">
+                            <ul class="Panel__lists cf">
+                                <li class="Panel__list">
+                                    <a href="javascript:void(0);">おすすめ順</a>
+                                </li>
+                                <li class="Panel__list">
+                                    <a href="javascript:void(0);">低い順</a>
+                                </li>
+                                <li class="Panel__list">
+                                    <a href="javascript:void(0);">高い順</a>
+                                </li>
+                                <li class="Panel__list">
+                                    <a href="javascript:void(0);">売れ筋順</a>
+                                </li>
+                                <li class="Panel__list">
+                                    <a href="javascript:void(0);">レビュー数順</a>
+                                </li>
+                            </ul>
+                            <span class="Panel__total">全商品</span>
                         </div>
-                        <div class="Ranking">
-                            <h2 class="Ranking__title">週間ランキング</h2>
+                        <div class="Goods">
+                            <ul class="cf">
+                                <% items.forEach(function(item){ %>
+                                    <li class="Goods__list">
+                                        <a href="<%= item.Url %>">
+                                            <img class="Goods__image" src="<%= item.Image.Medium %>" alt="<%= item.Name %>">
+                                            <p class="Goods__name"><%= item.Name %><p>
+                                            <p class="Goods__review">レビュー<%= item.Review.Count %>件</p>
+                                            <p class="Goods__price"><span class="Goods__priceNum"><%= item.PriceLabel.DefaultPrice %></span>円
+                                            <% if(item.Shipping.Code !== "1"){ %>
+                                                <span class="Goods__shipping"><%= item.Shipping.Name %></span>
+                                            <% } %>
+                                            </p>
+                                            <img src="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3200517&pid=883331068" height="1" width="1" Border="0">
+                                        </a>
+                                    </li>
+                                <% }); %>
+                            </ul>
                         </div>    
                     </div>    
                 </div>
