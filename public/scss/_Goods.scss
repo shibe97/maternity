@@ -16,7 +16,7 @@
         text-align: left;
 
         &:hover {
-            border: 2px solid #eb95a0;
+            border: 2px solid #ea8686;
         }
     }
 
@@ -40,6 +40,19 @@
         font-size: 150%;
         font-family: "Times New Roman";
         margin-right: 5px;
+    }
+
+    &__rank {
+        font-size: 150%;
+        font-family: "Times New Roman";
+        text-align: center;
+        margin: 0 auto  20px;
+        background-color: #8cc;
+        border-radius: 50%;
+        color: #fff;
+        display: block;
+        padding: 4px 0;
+        width: 40px;
     }
 
     &__shipping {

@@ -71,7 +71,7 @@
                                     <a href="javascript:void(0);">レビュー数順</a>
                                 </li>
                             </ul>
-                            <span class="Panel__total">全商品</span>
+                            <span class="Panel__total">全<%= addFigure(total) %>商品</span>
                         </div>
                         <div class="Goods">
                             <ul class="cf">
@@ -81,7 +81,7 @@
                                             <img class="Goods__image" src="<%= item.Image.Medium %>" alt="<%= item.Name %>">
                                             <p class="Goods__name"><%= item.Name %><p>
                                             <p class="Goods__review">レビュー<%= item.Review.Count %>件</p>
-                                            <p class="Goods__price"><span class="Goods__priceNum"><%= item.PriceLabel.DefaultPrice %></span>円
+                                            <p class="Goods__price"><span class="Goods__priceNum"><%= addFigure(item.PriceLabel.DefaultPrice) %></span>円
                                             <% if(item.Shipping.Code !== "1"){ %>
                                                 <span class="Goods__shipping"><%= item.Shipping.Name %></span>
                                             <% } %>

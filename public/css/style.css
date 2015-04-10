@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* 
 html5doctor.com Reset Stylesheet v1.6.1
 Last Updated: 2010-09-17
@@ -271,7 +272,7 @@ input, select {
     border: 2px solid #fff;
     text-align: left; }
     .Goods__list:hover {
-      border: 2px solid #eb95a0; }
+      border: 2px solid #ea8686; }
   .Goods__image {
     display: block;
     margin: 0 auto 20px; }
@@ -286,6 +287,17 @@ input, select {
     font-size: 150%;
     font-family: "Times New Roman";
     margin-right: 5px; }
+  .Goods__rank {
+    font-size: 150%;
+    font-family: "Times New Roman";
+    text-align: center;
+    margin: 0 auto 20px;
+    background-color: #8cc;
+    border-radius: 50%;
+    color: #fff;
+    display: block;
+    padding: 4px 0;
+    width: 40px; }
   .Goods__shipping {
     display: inline-block;
     padding: 3px 5px;
@@ -322,7 +334,7 @@ input, select {
     text-align: left;
     font-size: 113%;
     font-weight: normal;
-    line-height: 2;
+    line-height: 2.0;
     padding-left: 20px;
     background-color: #ea8686;
     border-radius: 4px; }

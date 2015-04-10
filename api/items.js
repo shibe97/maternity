@@ -1,8 +1,5 @@
 var request = require('request');
-var _ = require('underscore-node');
 var categories = require('../public/js/category.js');
-
-console.log(categories);
 
 module.exports = function(req, res) {
     var options = {
@@ -11,13 +8,7 @@ module.exports = function(req, res) {
     };
     request.get(options, function(error, response, body){
         if (!error && response.statusCode == 200) {
-
-            var result = _.filter(body.ResultSet[0].Result, function(item){
-                return typeof item.Name !== "undefined";
-            });
-            result = _.map(result, function(v, k){ return v; });
-
-            res.send(result);
+            res.send(body);
         } else {
             console.log('error: '+ response.statusCode);
         }

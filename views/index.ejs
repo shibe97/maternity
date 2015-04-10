@@ -54,6 +54,21 @@
                         </div>
                         <div class="Ranking">
                             <h2 class="Ranking__title">週間ランキング</h2>
+                            <div class="Goods">
+                                <ul class="cf">
+                                    <% items.forEach(function(item, index){ %>
+                                        <li class="Goods__list">
+                                            <a href="<%= item.Url %>">
+                                                <p class="Goods__rank"><%= index + 1 %></p>
+                                                <img class="Goods__image" src="<%= item.Image.Medium %>" alt="<%= item.Name %>">
+                                                <p class="Goods__name"><%= item.Name %></p>
+                                                <p class="Goods__review">レビュー<%= item.Review.Count %>件</p>
+                                                <img src="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3200517&pid=883331068" height="1" width="1" Border="0">
+                                            </a>
+                                        </li>
+                                    <% }); %>
+                                </ul>
+                            </div>    
                         </div>    
                     </div>    
                 </div>
