@@ -1,27 +1,17 @@
 var request = require('request');
 var _ = require('underscore-node');
-
-var categories = [];
-request.get({
-    url: 'http://localhost:5000/api/category',
-    json: true
-}, function(error, response, body){
-    if (!error && response.statusCode == 200) {
-        categories = body;
-    } else {
-        console.log('error: '+ response.statusCode);
-    }
-});
+var categories = require('../public/js/category.js');
 
 module.exports = function(req, res) {
     var items = [];
+    var sort = req.params.sort || "-score";
+    var page = req.params.page || 0;
     request.get({
-        url: 'http://'+req.headers.host+'/api/items/category/'+req.params.id,
+        url: 'http://'+req.headers.host+'/api/items/category/'+req.params.id+'/'+sort+'/'+page,
         json: true
     }, function(error, response, body){
         if (!error && response.statusCode == 200) {
             var total = body.ResultSet.totalResultsAvailable;
-            console.log(total);
             var items = _.filter(body.ResultSet[0].Result, function(item){
                 return typeof item.Name !== "undefined";
             });

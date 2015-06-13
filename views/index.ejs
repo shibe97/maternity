@@ -29,9 +29,9 @@
                             <dt class="Navi__title">カテゴリ</dt>
                             <dd>
                                 <ul class="Navi__lists">
-                                    <% categories.forEach(function(category){ %>
+                                    <% Object.keys(categories).forEach(function(id){ %>
                                         <li>
-                                            <a class="Navi__list" href="/category/<%= category.id %>"><%= category.name %></a>
+                                            <a class="Navi__list" href="/category/<%= id %>"><%= categories[id].name %></a>
                                         </li>
                                     <% }); %>
                                 </ul>

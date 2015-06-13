@@ -30,9 +30,9 @@
                             <dt class="Navi__title">カテゴリ</dt>
                             <dd>
                                 <ul class="Navi__lists">
-                                    <% categories.forEach(function(category){ %>
+                                    <% Object.keys(categories).forEach(function(id){ %>
                                         <li>
-                                            <a class="Navi__list <%= selectedCategory === category.id ? 'selected' : '' %>" href="/category/<%= category.id %>"><%= category.name %></a>
+                                            <a class="Navi__list <%= selectedCategory === id ? 'selected' : '' %>" href="/category/<%= id %>"><%= categories[id].name %></a>
                                         </li>
                                     <% }); %>
                                 </ul>
@@ -42,33 +42,34 @@
                 </div>
                 <div class="Body__right">
                     <div class="Content">
-                        <% categories.forEach(function(category){ %>
-                            <% if(selectedCategory === category.id){ %>
+                        <% Object.keys(categories).forEach(function(id){ %>
+                            <% if(selectedCategory === id){ %>
                                 <div class="Breadcrumb">
-                                    <p><a href="/">トップ</a> > <%= category.name %></p>
+                                    <p><a href="/">トップ</a> > <%= categories[id].name %></p>
                                 </div>
                                 <div class="Entity cf">
-                                    <h2 class="Entity__title"><%= category.name %></h2>
-                                    <p class="Entity__description"><%= category.description %></p>
+                                    <h2 class="Entity__title"><%= categories[id].name %></h2>
+                                    <p class="Entity__description"><%= categories[id].description %></p>
                                 </div>
                             <% } %>
                         <% }); %>
                         <div class="Panel cf">
                             <ul class="Panel__lists cf">
                                 <li class="Panel__list">
-                                    <a href="javascript:void(0);">おすすめ順</a>
+                                    <a href="/category/<%= selectedCategory %>/-score/0">おすすめ順</a>
                                 </li>
                                 <li class="Panel__list">
-                                    <a href="javascript:void(0);">低い順</a>
+                                    <a href="/category/<%= selectedCategory %>/+price">安い順</a>
                                 </li>
                                 <li class="Panel__list">
-                                    <a href="javascript:void(0);">高い順</a>
+                                    <a href="/category/<%= selectedCategory %>/-price">高い順</a>
                                 </li>
                                 <li class="Panel__list">
-                                    <a href="javascript:void(0);">売れ筋順</a>
+                                    <a href="/category/<%= selectedCategory %>/-sold">売れ筋順</a>
                                 </li>
                                 <li class="Panel__list">
                                     <a href="javascript:void(0);">レビュー数順</a>
+                                    <a href="/category/<%= selectedCategory %>/-review_count">レビュー数順</a>
                                 </li>
                             </ul>
                             <span class="Panel__total">全<%= addFigure(total) %>商品</span>
