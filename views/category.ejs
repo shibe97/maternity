@@ -68,7 +68,6 @@
                                     <a href="/category/<%= selectedCategory %>/-sold">売れ筋順</a>
                                 </li>
                                 <li class="Panel__list">
-                                    <a href="javascript:void(0);">レビュー数順</a>
                                     <a href="/category/<%= selectedCategory %>/-review_count">レビュー数順</a>
                                 </li>
                             </ul>
@@ -92,6 +91,18 @@
                                     </li>
                                 <% }); %>
                             </ul>
+                            <div class="Goods__pagenation">
+                                <% if(page-0 > 0){ %>
+                                    <a class="Goods__btn" href="/category/<%= selectedCategory %>/<%= sort %>/<%= page-0-1 %>">前へ</a>
+                                <% } else { %>
+                                    <a class="Goods__btn disabled" href="javascript:void(0);">前へ</a>
+                                <% } %>
+                                <% if((page - 0 + 1) * 36 < total - 0){ %>
+                                    <a class="Goods__btn" href="/category/<%= selectedCategory %>/<%= sort %>/<%= page-0+1 %>">次へ</a>
+                                <% } else { %>
+                                    <a class="Goods__btn disabled" href="javascript:void(0);">次へ</a>
+                                <% } %>
+                            </div>
                         </div>    
                     </div>    
                 </div>

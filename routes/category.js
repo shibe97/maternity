@@ -28,6 +28,8 @@ module.exports = function(req, res) {
             categories: categories,
             items: items,
             total: total,
+            sort: sort,
+            page: page,
             addFigure: function(str){
                 var num = new String(str).replace(/,/g, "");
                 while(num != (num = num.replace(/^(-?\d+)(\d{3})/, "$1,$2")));
